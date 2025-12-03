@@ -32,13 +32,11 @@ Tampilan lengkap:
 Menggunakan `SliverAppBar` + banner gambar.
 
 ### ✔ 5. Favorite System
-- Menyimpan anime favorit lokal melalui `SharedPreferences`.
-- Tidak hilang meskipun aplikasi ditutup.
-- Tidak perlu login API.
+- Menyimpan anime favorit melalui `SharedPreferences`.
 
 ### ✔ 6. Login & Register (Local Auth)
-- Login & register lokal (simulasi UAS).
-- Data user disimpan lokal.
+- Login & register 
+- Data user .
 - Logout tersedia.
 
 ### ✔ 7. Profile Page
