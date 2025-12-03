@@ -98,20 +98,25 @@ Menggunakan `SliverAppBar` + banner gambar.
     └─ shimmer_box.dart
 
 📁 Penjelasan Struktur Folder & File
+
 core/
   constants.dart → Base URL API & MAL Client ID
   app_session.dart → Session login user (SharedPreferences)
+  
 services/
   anime_api.dart → Fetch API (ranking, search, season, detail)
   http_client.dart → Wrapper HTTP + header Client ID
+  
 models/
   anime.dart → Model data anime
   anime_detail.dart → Model detail anime
   user.dart → Model user lokal
+  
 widgets/
   shimmer_box.dart → Widget shimmer loading
   error_widget.dart → Error + tombol retry
   anime_card.dart → Card anime reusable
+  
 pages/
   home_page.dart → Halaman ranking anime
   search_page.dart → Pencarian anime
@@ -119,12 +124,15 @@ pages/
   detail_page.dart → Detail anime
   favorites_page.dart → Anime favorit lokal
   root_screen.dart → Bottom navigation
+  
 pages/profile/
   profile_page.dart → Profil user + logout
+  
 auth/
   login_page.dart → Login
   register_page.dart → Registrasi
   auth_guard.dart → Redirect jika belum login
+  
 utils/
   shared_pref.dart → Local storage helper
   
