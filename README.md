@@ -102,3 +102,46 @@ Menggunakan `SliverAppBar` + banner gambar.
     ├─ error_widget.dart
     ├─ loading_widget.dart
     └─ shimmer_box.dart
+## 🔗 API Endpoint yang Digunakan
+
+Semua request menggunakan header:
+
+X-MAL-CLIENT-ID: 
+
+
+
+🔗 API Endpoint yang Digunakan
+
+1. Top Anime Ranking
+GET https://api.myanimelist.net/v2/anime/ranking?ranking_type=all&limit=20
+
+2. Search Anime
+GET https://api.myanimelist.net/v2/anime?q={query}&limit=20
+
+3. Seasonal Anime
+GET https://api.myanimelist.net/v2/anime/season/{year}/{season}?limit=20
+
+4. Detail Anime
+GET https://api.myanimelist.net/v2/anime/{id}?fields=id,title,main_picture,mean,genres,synopsis,start_date
+
+🎥 Video Demo
+LINK
+
+🛠 Instalasi
+1. Clone Repository
+git clone https://github.com/username/anime_app_uas.git
+cd anime_app_uas
+
+2. Install Dependency
+flutter pub get
+
+3. Masukkan Client ID MyAnimeList
+Edit file:
+  lib/core/constants.dart
+Isi:
+  static const clientId = "YOUR_CLIENT_ID_HERE";
+
+4. Jalankan Aplikasi
+flutter run
+
+
