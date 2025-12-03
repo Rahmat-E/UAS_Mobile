@@ -102,15 +102,23 @@ Menggunakan `SliverAppBar` + banner gambar.
     ├─ error_widget.dart
     ├─ loading_widget.dart
     └─ shimmer_box.dart
-## 🔗 API Endpoint yang Digunakan
 
-Semua request menggunakan header:
+core/constants.dart → menyimpan base URL API, MAL Client ID
+core/app_session.dart → menyimpan status login user
+services/anime_api.dart → fungsi fetch API (ranking, search, seasonal, detail)
+services/http_client.dart → wrapper HTTP + header MAL
+models/anime.dart → model data anime
+models/anime_detail.dart → model detail anime
+widgets/shimmer_box.dart → shimmer loading reusable
+widgets/error_widget.dart → error + tombol retry
+pages/home_page.dart → halaman ranking anime
+pages/search_page.dart → halaman search API
+pages/season_page.dart → halaman filter season + year
+pages/detail_page.dart → halaman detail anime
+pages/favorites_page.dart → daftar anime favorit lokal
 
-X-MAL-CLIENT-ID: 
 
-
-
-🔗 API Endpoint yang Digunakan
+##🔗 API Endpoint yang Digunakan
 
 1. Top Anime Ranking
 GET https://api.myanimelist.net/v2/anime/ranking?ranking_type=all&limit=20
