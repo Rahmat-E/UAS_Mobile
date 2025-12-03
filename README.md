@@ -1,49 +1,104 @@
 # 📱 AnimeList UAS — Flutter + MyAnimeList API  
-Aplikasi Mobile Programming (UAS)  
-Dibuat oleh: **[Nama Kamu]**  
+Ujian Akhir Semester — Mobile Programming  
+Dosen Pengampu: *(isi sendiri jika perlu)*  
 
-Aplikasi ini merupakan pengembangan dari project UTS dengan menambahkan integrasi **RESTful API MyAnimeList** untuk menampilkan daftar anime secara real-time. Aplikasi memenuhi seluruh ketentuan UAS seperti HTTP Request, JSON parsing, UI asynchronous, Search, Filter, Detail Page, dan Shimmer Loading.
+Aplikasi ini merupakan pengembangan dari project UTS dengan mengintegrasikan **RESTful API MyAnimeList** untuk menampilkan data anime secara real-time.  
+Aplikasi memenuhi seluruh ketentuan UAS seperti HTTP Request, JSON parsing, asynchronous UI, Search, Filter, Detail Page, dan Shimmer Loading.
 
 ---
 
 ## 🚀 Fitur Utama
-### ✔ 1. **Home Page**
-- Menampilkan daftar **Top Anime Ranking** dari MyAnimeList API.
-- Menggunakan `FutureBuilder` + `Shimmer` untuk loading state.
-- Navigasi ke Detail Page.
 
-### ✔ 2. **Search Anime**
-- Pencarian anime berdasarkan judul.
-- Menggunakan query parameter:  
-  `GET https://api.myanimelist.net/v2/anime?q={query}`
-- Loading shimmer + error handler + retry.
+### ✔ 1. Home Page — Top Anime Ranking
+- Menampilkan ranking anime dari MyAnimeList API.
+- Data real-time.
+- Loading menggunakan shimmer.
+- Tombol retry jika internet error.
 
-### ✔ 3. **Seasonal Anime Page**
-- Filter berdasarkan **Season (winter/spring/summer/fall)** dan **Year**.
-- Data diambil dari endpoint:  
+### ✔ 2. Search Page — Cari Anime
+- Mencari anime berdasarkan judul.
+- Endpoint digunakan:  
+  `GET https://api.myanimelist.net/v2/anime?q={query}&limit=20`
+- Loading shimmer + error handling.
+
+### ✔ 3. Season Page — Seasonal Anime
+- Filter season: **winter, spring, summer, fall**.
+- Filter tahun: **dinamis dari tahun sekarang ke bawah**.
+- Endpoint:  
   `GET /anime/season/{year}/{season}`
 
-### ✔ 4. **Detail Anime**
-- Menampilkan:
-  - Judul
-  - Poster
-  - Rating (Score)
-  - Season & Year
-  - Genres
-  - Synopsis
-- Menggunakan banner dengan `SliverAppBar`.
+### ✔ 4. Detail Anime Page
+Tampilan lengkap:
+- Poster
+- Judul
+- Rating
+- Tahun / Season
+- Genre
+- Synopsis  
+Menggunakan `SliverAppBar` + banner gambar.
 
-### ✔ 5. **Favorite System (Local)**
-- Simpan anime favorit ke device dengan `SharedPreferences`.
-- Tidak butuh login API.
-- Tetap tersimpan meskipun aplikasi ditutup.
+### ✔ 5. Favorite System
+- Menyimpan anime favorit lokal melalui `SharedPreferences`.
+- Tidak hilang meskipun aplikasi ditutup.
+- Tidak perlu login API.
 
-### ✔ 6. **Login & Register (Local Auth)**
-- Simulasi login lokal menggunakan SharedPreferences.
-- Untuk akses Profile & Favorite.
+### ✔ 6. Login & Register (Local Auth)
+- Login & register lokal (simulasi UAS).
+- Data user disimpan lokal.
+- Logout tersedia.
 
-### ✔ 7. **Profile Page**
-- Menampilkan data user lokal.
-- Logout untuk menghapus sesi.
+### ✔ 7. Profile Page
+- Menampilkan data user.
+- Tombol logout.
 
-### ✔ 8. **Arsitektur Project Rapi**
+### ✔ 8. UI/UX Modern + Shimmer Loading
+- Setiap halaman API punya shimmer custom:
+  - Shimmer banner
+  - Shimmer judul
+  - Shimmer rating
+  - Shimmer synopsis
+- Styling rapi dan responsif.
+
+---
+
+## 📂 Struktur Folder
+    lib/
+    ├─ main.dart
+    │
+    ├─ auth/
+    │ ├─ auth_guard.dart
+    │ ├─ login_page.dart
+    │ └─ register_page.dart
+    │
+    ├─ core/
+    │ ├─ app_session.dart
+    │ └─ constants.dart
+    │
+    ├─ models/
+    │ ├─ anime.dart
+    │ ├─ anime_detail.dart
+    │ └─ user.dart
+    │
+    ├─ pages/
+    │ ├─ home_page.dart
+    │ ├─ search_page.dart
+    │ ├─ season_page.dart
+    │ ├─ favorites_page.dart
+    │ ├─ detail_page.dart
+    │ ├─ root_screen.dart
+    │ │
+    │ └─ profile/
+    │ └─ profile_page.dart
+    │
+    ├─ services/
+    │ ├─ anime_api.dart
+    │ └─ http_client.dart
+    │
+    ├─ utils/
+    │ └─ shared_pref.dart
+    │
+    └─ widgets/
+    ├─ anime_card.dart
+    ├─ error_widget.dart
+    ├─ loading_widget.dart
+    └─ shimmer_box.dart
