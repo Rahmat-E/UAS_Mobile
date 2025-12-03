@@ -103,20 +103,44 @@ Menggunakan `SliverAppBar` + banner gambar.
     ├─ loading_widget.dart
     └─ shimmer_box.dart
 
-core/constants.dart → menyimpan base URL API, MAL Client ID
-core/app_session.dart → menyimpan status login user
-services/anime_api.dart → fungsi fetch API (ranking, search, seasonal, detail)
-services/http_client.dart → wrapper HTTP + header MAL
-models/anime.dart → model data anime
-models/anime_detail.dart → model detail anime
-widgets/shimmer_box.dart → shimmer loading reusable
-widgets/error_widget.dart → error + tombol retry
-pages/home_page.dart → halaman ranking anime
-pages/search_page.dart → halaman search API
-pages/season_page.dart → halaman filter season + year
-pages/detail_page.dart → halaman detail anime
-pages/favorites_page.dart → daftar anime favorit lokal
-
+📁 Penjelasan Struktur Folder & File
+🔹 core/
+File	Deskripsi
+constants.dart	Menyimpan base URL API, MAL clientId, dan konfigurasi global lainnya.
+app_session.dart	Menyimpan status login user, data user, serta kontrol session menggunakan SharedPreferences.
+🔹 services/
+File	Deskripsi
+anime_api.dart	Berisi seluruh fungsi HTTP GET ke MyAnimeList API (ranking, search, seasonal, detail anime).
+http_client.dart	Wrapper HTTP (package http) yang otomatis menambahkan header X-MAL-CLIENT-ID.
+🔹 models/
+File	Deskripsi
+anime.dart	Model untuk data anime singkat (id, title, image, score, year).
+anime_detail.dart	Model data detail anime (image, synopsis, genres, mean, year).
+user.dart	Model data user lokal (email, username, password).
+🔹 widgets/
+File	Deskripsi
+shimmer_box.dart	Widget shimmer loading reusable (dipakai di Home, Search, Season, Detail).
+error_widget.dart	Widget error handler dengan tombol Retry + pesan error.
+anime_card.dart	Widget card anime reusable untuk grid/list.
+🔹 pages/
+File	Deskripsi
+home_page.dart	Halaman Top Anime Ranking dari API.
+search_page.dart	Halaman pencarian anime berdasarkan keyword API.
+season_page.dart	Halaman filter Anime berdasarkan season & year.
+detail_page.dart	Halaman detail anime (image, rating, genre, sinopsis).
+favorites_page.dart	Halaman daftar anime favorit yang disimpan lokal.
+root_screen.dart	Halaman utama berisi Bottom Navigation Bar.
+🔹 pages/profile/
+File	Deskripsi
+profile_page.dart	Menampilkan data user + tombol logout.
+🔹 auth/
+File	Deskripsi
+login_page.dart	Halaman login user lokal.
+register_page.dart	Halaman registrasi user lokal.
+auth_guard.dart	Melakukan pengecekan login; redirect ke login jika belum login.
+🔹 utils/
+File	Deskripsi
+shared_pref.dart	Helper untuk menyimpan data local (login, user, favorit).
 
 ##🔗 API Endpoint yang Digunakan
 
