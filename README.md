@@ -1,25 +1,7 @@
-<<<<<<< HEAD
-# anime_app2
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# 📱 AnimeList UAS — Flutter + MyAnimeList API  
+Anime_app2 UAS — Flutter + MyAnimeList API  
 Ujian Akhir Semester — Mobile Programming  
 
-## 🚀 Fitur Utama
+##  Fitur Utama
 
 ### ✔ 1. Home Page — Top Anime Ranking
 - Menampilkan ranking anime dari MyAnimeList API.
@@ -179,5 +161,3 @@ Isi:
 4. Jalankan Aplikasi
 flutter run
 
-
->>>>>>> b378bab674b7419591b383acc742e8ea6c0905c2
