@@ -1,4 +1,4 @@
-Anime_app2 UAS — Flutter + MyAnimeList API  
+AnimeListUAS — Flutter + MyAnimeList API  
 Ujian Akhir Semester — Mobile Programming  
 
 ##  Fitur Utama
