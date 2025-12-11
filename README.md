@@ -161,3 +161,12 @@ Isi:
 4. Jalankan Aplikasi
 flutter run
 
+
+
+
+
+Link laporan:
+https://drive.google.com/file/d/1D6CKLk1sMl0sOsK_aSgWOXwkhaJW35pe/view?usp=sharing
+Link youtube:
+https://www.youtube.com/watch?v=ogqmiPRNFto
+
